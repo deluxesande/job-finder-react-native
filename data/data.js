@@ -1,0 +1,88 @@
+const data = [
+    {
+        job_id: 1,
+        employer_logo: "logo.png",
+        employer_name: "Spotify",
+        job_title: "Senior Frontend developer",
+        job_country: "Kenya",
+        job_employment_type: "remote",
+        job_highlights: {
+            Qualifications: ["React", "TypeScript", "JSON"],
+            Responsibilities: ["Design", "Development"],
+        },
+        job_description: "Android and IoS developer...",
+        // job_google_link: "#",
+    },
+    {
+        job_id: 2,
+        employer_logo: "logo.png",
+        employer_name: "Facebook",
+        job_title: "React Native developer (React, Typescript)",
+        job_country: "Nigeria",
+        job_employment_type: "In-Person",
+        job_highlights: {
+            Qualifications: ["React", "TypeScript", "JSON"],
+            Responsibilities: ["Design", "Development"],
+        },
+        job_description: "Android and IoS developer...",
+        // job_google_link: "#",
+    },
+    {
+        job_id: 3,
+        employer_logo: "logo.png",
+        employer_name: "Google",
+        job_title: "NextJs developer (React, Typescript)",
+        job_country: "England",
+        job_employment_type: "remote",
+        job_highlights: {
+            Qualifications: ["React", "TypeScript", "JSON"],
+            Responsibilities: ["Design", "Development"],
+        },
+        job_description: "Android and IoS developer...",
+        // job_google_link: "#",
+    },
+    {
+        job_id: 4,
+        employer_logo: "logo.png",
+        employer_name: "Spotify",
+        job_title: "Senior Frontend developer",
+        job_country: "Kenya",
+        job_employment_type: "remote",
+        job_highlights: {
+            Qualifications: ["React", "TypeScript", "JSON"],
+            Responsibilities: ["Design", "Development"],
+        },
+        job_description: "Android and IoS developer...",
+        // job_google_link: "#",
+    },
+    {
+        job_id: 5,
+        employer_logo: "logo.png",
+        employer_name: "Facebook",
+        job_title: "React Native developer (React, Typescript)",
+        job_country: "Nigeria",
+        job_employment_type: "In-Person",
+        job_highlights: {
+            Qualifications: ["React", "TypeScript", "JSON"],
+            Responsibilities: ["Design", "Development"],
+        },
+        job_description: "Android and IoS developer...",
+        // job_google_link: "#",
+    },
+    {
+        job_id: 6,
+        employer_logo: "logo.png",
+        employer_name: "Google",
+        job_title: "NextJs developer (React, Typescript)",
+        job_country: "England",
+        job_employment_type: "remote",
+        job_highlights: {
+            Qualifications: ["React", "TypeScript", "JSON"],
+            Responsibilities: ["Design", "Development"],
+        },
+        job_description: "Android and IoS developer...",
+        // job_google_link: "#",
+    },
+];
+
+export default data;

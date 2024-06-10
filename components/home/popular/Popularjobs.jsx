@@ -10,37 +10,13 @@ import styles from "./popularjobs.style";
 import { useRouter } from "expo-router";
 import { COLORS, SIZES } from "../../../constants";
 import PopularJobCard from "../../common/cards/popular/PopularJobCard";
+import data from "../../../data/data";
 
 const Popularjobs = () => {
     const router = useRouter();
     const [selectedJob, setSelectedJob] = useState();
     const isLoading = false;
     const error = false;
-
-    // TODO - replace with API call
-    const data = [
-        {
-            job_id: 1,
-            employer_logo: "logo.png",
-            employer_name: "Spotify",
-            job_title: "Senior Frontend developer",
-            job_country: "Kenya",
-        },
-        {
-            job_id: 2,
-            employer_logo: "logo.png",
-            employer_name: "Facebook",
-            job_title: "React Native developer (React, Typescript)",
-            job_country: "Nigeria",
-        },
-        {
-            job_id: 3,
-            employer_logo: "logo.png",
-            employer_name: "Google",
-            job_title: "NextJs developer (React, Typescript)",
-            job_country: "England",
-        },
-    ];
 
     return (
         <View style={styles.container}>

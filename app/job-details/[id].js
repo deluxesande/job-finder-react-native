@@ -18,6 +18,7 @@ import {
     Specifics,
 } from "../../components";
 import { COLORS, icons, SIZES } from "../../constants";
+import data from "../../data/data";
 
 const tabs = ["About", "Qualifications", "Responsibilities"];
 
@@ -61,22 +62,7 @@ const JobDetails = () => {
     // TODO - replace with API call
     const isLoading = false;
     const error = false;
-    const data = [
-        {
-            job_id: 2,
-            employer_logo: "logo.png",
-            employer_name: "Facebook",
-            job_title: "React Native developer (React, Typescript)",
-            job_country: "Nigeria",
-            job_employment_type: "In-Person",
-            job_highlights: {
-                Qualifications: ["React", "TypeScript", "JSON"],
-                Responsibilities: ["Design", "Development"],
-            },
-            job_description: "Android and IoS developer...",
-            // job_google_link: "#",
-        },
-    ];
+    const data = data.filter((job) => job.job_id == params.id);
 
     return (
         <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.lightWhite }}>
