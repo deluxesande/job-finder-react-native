@@ -13,6 +13,7 @@ import PopularJobCard from "../../common/cards/popular/PopularJobCard";
 
 const Popularjobs = () => {
     const router = useRouter();
+    const [selectedJob, setSelectedJob] = useState();
     const isLoading = false;
     const error = false;
 
@@ -61,7 +62,11 @@ const Popularjobs = () => {
                         renderItem={({ item }) => (
                             <PopularJobCard
                                 item={item}
-                                handleCardPress={() => {}}
+                                selectedJob={selectedJob}
+                                handleCardPress={(item) => {
+                                    router.push(`job-details/${item.job_id}`);
+                                    setSelectedJob(item.job_id);
+                                }}
                             />
                         )}
                         keyExtractor={(item) => item?.job_id}
