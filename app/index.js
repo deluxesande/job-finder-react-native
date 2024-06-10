@@ -12,7 +12,6 @@ import {
 
 export default function Home() {
     const router = useRouter();
-
     return (
         <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.lightWhite }}>
             <Stack.Screen
@@ -24,7 +23,7 @@ export default function Home() {
                     ),
                     headerRight: () => (
                         <ScreenHeaderBtn
-                            iconUrl={icons.profile}
+                            iconUrl={images.profile}
                             dimension="100%"
                         />
                     ),
