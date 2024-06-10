@@ -35,6 +35,30 @@ const NearbyJobs = () => {
             job_country: "England",
             job_employment_type: "remote",
         },
+        {
+            job_id: 4,
+            employer_logo: "logo.png",
+            employer_name: "Spotify",
+            job_title: "Senior Frontend developer",
+            job_country: "Kenya",
+            job_employment_type: "remote",
+        },
+        {
+            job_id: 5,
+            employer_logo: "logo.png",
+            employer_name: "Facebook",
+            job_title: "React Native developer (React, Typescript)",
+            job_country: "Nigeria",
+            job_employment_type: "In-Person",
+        },
+        {
+            job_id: 6,
+            employer_logo: "logo.png",
+            employer_name: "Google",
+            job_title: "NextJs developer (React, Typescript)",
+            job_country: "England",
+            job_employment_type: "remote",
+        },
     ];
 
     return (
