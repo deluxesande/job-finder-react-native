@@ -26,8 +26,21 @@ const JobSearch = () => {
 
     const handleSearch = () => {
         setSearchResult(
-            data.filter((job) =>
-                job.job_title.toLowerCase().match(params.id.toLowerCase())
+            data.filter(
+                (job) =>
+                    job.job_title
+                        .toLowerCase()
+                        .match(params.id.toLowerCase()) ||
+                    job.job_description
+                        .toLowerCase()
+                        .match(params.id.toLowerCase()) ||
+                    job.job_employment_type
+                        .toLowerCase()
+                        .match(params.id.toLowerCase()) ||
+                    job.job_country
+                        .toLowerCase()
+                        .match(params.id.toLowerCase()) ||
+                    job.job_period.toLowerCase().match(params.id.toLowerCase())
             )
         );
     };

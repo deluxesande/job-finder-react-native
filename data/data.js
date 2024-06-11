@@ -12,6 +12,7 @@ const data = [
         },
         job_description: "Android and IoS developer...",
         // job_google_link: "#",
+        job_period: "Part-time",
     },
     {
         job_id: 2,
@@ -26,6 +27,7 @@ const data = [
         },
         job_description: "Android and IoS developer...",
         // job_google_link: "#",
+        job_period: "Part-time",
     },
     {
         job_id: 3,
@@ -40,6 +42,7 @@ const data = [
         },
         job_description: "Android and IoS developer...",
         // job_google_link: "#",
+        job_period: "Full-time",
     },
     {
         job_id: 4,
@@ -54,6 +57,7 @@ const data = [
         },
         job_description: "Android and IoS developer...",
         // job_google_link: "#",
+        job_period: "Part-time",
     },
     {
         job_id: 5,
@@ -68,6 +72,7 @@ const data = [
         },
         job_description: "Android and IoS developer...",
         // job_google_link: "#",
+        job_period: "Full-time",
     },
     {
         job_id: 6,
@@ -82,6 +87,7 @@ const data = [
         },
         job_description: "Android and IoS developer...",
         // job_google_link: "#",
+        job_period: "Full-time",
     },
 ];
 

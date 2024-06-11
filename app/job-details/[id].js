@@ -59,10 +59,12 @@ const JobDetails = () => {
         }
     };
 
+    // Remember to replace specific_data with data when fetching from api
+
     // TODO - replace with API call
     const isLoading = false;
     const error = false;
-    const data = data.filter((job) => job.job_id == params.id);
+    const specific_data = data.filter((job) => job.job_id == params.id);
 
     return (
         <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.lightWhite }}>
@@ -114,10 +116,10 @@ const JobDetails = () => {
                             }}
                         >
                             <Company
-                                companyLogo={data[0].employer_logo}
-                                jobTitle={data[0].job_title}
-                                companyName={data[0].employer_name}
-                                location={data[0].job_country}
+                                companyLogo={specific_data[0].employer_logo}
+                                jobTitle={specific_data[0].job_title}
+                                companyName={specific_data[0].employer_name}
+                                location={specific_data[0].job_country}
                             />
 
                             <JobTabs
@@ -133,7 +135,7 @@ const JobDetails = () => {
 
                 <JobFooter
                     url={
-                        data[0]?.job_google_link ??
+                        specific_data[0]?.job_google_link ??
                         "https://careers.google.com/jobs/results"
                     }
                 />

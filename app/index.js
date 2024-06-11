@@ -27,6 +27,7 @@ export default function Home() {
                         <ScreenHeaderBtn
                             iconUrl={images.profile}
                             dimension="100%"
+                            handlePress={() => router.push("/login")}
                         />
                     ),
                     headerTitle: "",
