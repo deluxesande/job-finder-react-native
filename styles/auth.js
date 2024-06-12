@@ -7,6 +7,8 @@ const styles = StyleSheet.create({
         marginVertical: SIZES.medium,
         paddingLeft: SIZES.large,
         paddingRight: SIZES.large,
+        justifyContent: "center",
+        height: "100%",
     },
     text: {
         fontFamily: FONT.regular,
