@@ -32,10 +32,10 @@ const Profile = () => {
             [
                 {
                     text: "Cancel",
-                    onPress: () => console.log("Cancel Pressed"),
+                    onPress: () => {},
                     style: "cancel",
                 },
-                { text: "Yes", onPress: () => console.log("OK Pressed") },
+                { text: "Yes", onPress: () => {}, style: "destructive" },
             ]
         );
     };

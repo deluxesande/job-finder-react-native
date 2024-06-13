@@ -3,19 +3,20 @@ import { ActivityIndicator, Text, TouchableOpacity, View } from "react-native";
 import { COLORS } from "../../../constants";
 import NearbyJobCard from "../../common/cards/nearby/NearbyJobCard";
 import styles from "./nearbyjobs.style";
-import data from "../../../data/data";
+import useFetch from "../../../hook/useFetch";
 
 const NearbyJobs = () => {
     const router = useRouter();
-    const isLoading = false;
-    const error = false;
 
-    // TODO - replace with API call
+    const { data, isLoading, error } = useFetch("search", {
+        query: "React developer",
+        num_pages: "1",
+    });
 
     return (
         <View style={styles.container}>
             <View style={styles.header}>
-                <Text style={styles.headerTitle}>Popular jobs</Text>
+                <Text style={styles.headerTitle}>Near by jobs</Text>
                 <TouchableOpacity>
                     <Text style={styles.headerBtn}>Show All</Text>
                 </TouchableOpacity>

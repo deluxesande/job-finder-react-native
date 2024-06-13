@@ -13,7 +13,7 @@ import axios from "axios";
 import { ScreenHeaderBtn, NearbyJobCard } from "../../components";
 import { COLORS, icons, SIZES } from "../../constants";
 import styles from "../../styles/search";
-import data from "../../data/data";
+import { REACT_APP_RAPIDAPI_KEY, REACT_APP_RAPIDAPI_HOST } from "@env";
 
 const JobSearch = () => {
     const params = useLocalSearchParams();
@@ -24,53 +24,32 @@ const JobSearch = () => {
     const [searchError, setSearchError] = useState(null);
     const [page, setPage] = useState(1);
 
-    const handleSearch = () => {
-        setSearchResult(
-            data.filter(
-                (job) =>
-                    job.job_title
-                        .toLowerCase()
-                        .match(params.id.toLowerCase()) ||
-                    job.job_description
-                        .toLowerCase()
-                        .match(params.id.toLowerCase()) ||
-                    job.job_employment_type
-                        .toLowerCase()
-                        .match(params.id.toLowerCase()) ||
-                    job.job_country
-                        .toLowerCase()
-                        .match(params.id.toLowerCase()) ||
-                    job.job_period.toLowerCase().match(params.id.toLowerCase())
-            )
-        );
+    const handleSearch = async () => {
+        setSearchLoader(true);
+        setSearchResult([]);
+
+        try {
+            const options = {
+                method: "GET",
+                url: `https://jsearch.p.rapidapi.com/search`,
+                headers: {
+                    "X-RapidAPI-Key": REACT_APP_RAPIDAPI_KEY,
+                    "X-RapidAPI-Host": REACT_APP_RAPIDAPI_HOST,
+                },
+                params: {
+                    query: params.id,
+                    page: page.toString(),
+                },
+            };
+
+            const response = await axios.request(options);
+            setSearchResult(response.data.data);
+        } catch (error) {
+            setSearchError(error);
+        } finally {
+            setSearchLoader(false);
+        }
     };
-
-    // const handleSearch = async () => {
-    //     setSearchLoader(true);
-    //     setSearchResult([]);
-
-    //     try {
-    //         const options = {
-    //             method: "GET",
-    //             url: `https://jsearch.p.rapidapi.com/search`,
-    //             headers: {
-    //                 "X-RapidAPI-Key": "",
-    //                 "X-RapidAPI-Host": "jsearch.p.rapidapi.com",
-    //             },
-    //             params: {
-    //                 query: params.id,
-    //                 page: page.toString(),
-    //             },
-    //         };
-
-    //         const response = await axios.request(options);
-    //         setSearchResult(response.data.data);
-    //     } catch (error) {
-    //         setSearchError(error);
-    //     } finally {
-    //         setSearchLoader(false);
-    //     }
-    // };
 
     const handlePagination = (direction) => {
         if (direction === "left" && page > 1) {

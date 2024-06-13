@@ -7,7 +7,12 @@ const NearbyJobCard = ({ job, handleNavigate }) => {
         <TouchableOpacity style={styles.container} onPress={handleNavigate}>
             <TouchableOpacity style={styles.logoContainer}>
                 <Image
-                    source={{ uri: job.employer_logo }}
+                    source={{
+                        uri:
+                            job.employer_logo && job.employer_logo.trim() !== ""
+                                ? job.employer_logo
+                                : "https://t4.ftcdn.net/jpg/05/05/61/73/360_F_505617309_NN1CW7diNmGXJfMicpY9eXHKV4sqzO5H.jpg",
+                    }}
                     resizeMode="contain"
                     style={styles.logoImage}
                 />

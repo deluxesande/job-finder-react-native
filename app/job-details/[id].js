@@ -18,7 +18,7 @@ import {
     Specifics,
 } from "../../components";
 import { COLORS, icons, SIZES } from "../../constants";
-import data from "../../data/data";
+import useFetch from "../../hook/useFetch";
 
 const tabs = ["About", "Qualifications", "Responsibilities"];
 
@@ -59,12 +59,9 @@ const JobDetails = () => {
         }
     };
 
-    // Remember to replace specific_data with data when fetching from api
-
-    // TODO - replace with API call
-    const isLoading = false;
-    const error = false;
-    const specific_data = data.filter((job) => job.job_id == params.id);
+    const { data, isLoading, error, refetch } = useFetch("job-details", {
+        job_id: params.id,
+    });
 
     return (
         <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.lightWhite }}>
@@ -116,10 +113,10 @@ const JobDetails = () => {
                             }}
                         >
                             <Company
-                                companyLogo={specific_data[0].employer_logo}
-                                jobTitle={specific_data[0].job_title}
-                                companyName={specific_data[0].employer_name}
-                                location={specific_data[0].job_country}
+                                companyLogo={data[0].employer_logo}
+                                jobTitle={data[0].job_title}
+                                companyName={data[0].employer_name}
+                                location={data[0].job_country}
                             />
 
                             <JobTabs
@@ -135,7 +132,7 @@ const JobDetails = () => {
 
                 <JobFooter
                     url={
-                        specific_data[0]?.job_google_link ??
+                        data[0]?.job_google_link ??
                         "https://careers.google.com/jobs/results"
                     }
                 />
